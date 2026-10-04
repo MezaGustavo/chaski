@@ -1,0 +1,35 @@
+{
+  "name": "chaski",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n relay,web \"node --env-file-if-exists=.env server/relay.mjs\" \"vite --host\"",
+    "relay": "node --env-file-if-exists=.env server/relay.mjs",
+    "web": "vite --host",
+    "build": "tsc -b && vite build",
+    "setup:devnet": "node server/setup-devnet.mjs",
+    "test": "node --test 'tests/*.test.ts' 'tests/*.test.mjs'"
+  },
+  "dependencies": {
+    "@solana/spl-token": "^0.4.15",
+    "@solana/web3.js": "^1.99.0",
+    "bs58": "^6.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tweetnacl": "^1.0.3",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.2",
+    "vite-plugin-node-polyfills": "^0.28.0"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
