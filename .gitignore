@@ -1,0 +1,8 @@
+server/devnet.json
+node_modules
+dist
+.gstack/
+tsconfig.tsbuildinfo
+.env
+.env.*
+!.env.example
